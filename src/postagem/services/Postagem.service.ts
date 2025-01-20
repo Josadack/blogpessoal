@@ -16,7 +16,8 @@ export class PostagemService{
     async findAll(): Promise<Postagem[]>{
         return this.postagemRepository.find({
             relations: {
-                tema: true
+                tema: true,
+                usuario: true
             }
         }); // SELECT * FROM tb_postagens;
     }
@@ -28,7 +29,8 @@ export class PostagemService{
                 id
             },
             relations: {
-                tema: true
+                tema: true,
+                usuario: true
             }
         })
 
@@ -46,7 +48,8 @@ export class PostagemService{
                 titulo: ILike(`%${titulo}%`)
             },
             relations: {
-                tema: true
+                tema: true,
+                usuario: true
             }
         }); // SELECT * FROM tb_postagens;
     }
@@ -61,6 +64,8 @@ export class PostagemService{
 
     async update(postagem: Postagem): Promise<Postagem>{
 
+       /* if(!postagem.id || postagem.id < 0)
+            throw new */
         await this.findById(postagem.id)//Acessando o método findbyid
 
         await this.temaService.findById(postagem.tema.id)
