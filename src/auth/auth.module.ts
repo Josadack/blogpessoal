@@ -14,11 +14,11 @@ import { JwtStrategy } from './strategy/jwt.strategy';
         forwardRef(() =>UsuarioModule),
         JwtModule.register({
             secret:  jwtConstants.secret,
-            signOptions: {expiresIn: '1'}
+            signOptions: {expiresIn: '1h'}
         })
     ],
     controllers: [AuthController],
     providers: [Bcrypt, AuthService, LocalStrategy, JwtStrategy],
-    exports: [Bcrypt]
+    exports: [Bcrypt],
 })
 export class AuthModule {};
