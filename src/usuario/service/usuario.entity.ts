@@ -25,8 +25,8 @@ export class UsuarioService {
             relations: {
                 postagem: true,
             },
-        });
-    }
+        });
+    }
 
     async findById(id: number): Promise<Usuario> {
 
