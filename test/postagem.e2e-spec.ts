@@ -4,7 +4,7 @@ import * as request from 'supertest';
 import { AppModule } from '../src/app.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
-describe('Testes dos Módulos Usuario e Auth (e2e)', () => {
+describe('Testes dos Módulos Postagem (e2e)', () => {
   let token: any;
   let usuarioId: any;
   let temaId: any;
@@ -60,7 +60,7 @@ describe('Testes dos Módulos Usuario e Auth (e2e)', () => {
     token = resposta.body.token;
   });
 
-  //Preciso criar um tema, para criar uma postagem
+  
   it('03 - Deve cadastrar um novo Tema ', async () => {
     const resposta = await request(app.getHttpServer())
       .post('/temas')
@@ -134,7 +134,6 @@ describe('Testes dos Módulos Usuario e Auth (e2e)', () => {
       .expect(204);
   });
 
-  //Método especial pesquisar por titulo
   it('09 - Deve Buscar Titulo pelo nome', async () => {
     return request(app.getHttpServer())
     .get('/postagens/titulo/root')

@@ -4,7 +4,7 @@ import * as request from 'supertest';
 import { AppModule } from '../src/app.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
-describe('Testes dos Módulos Usuario e Auth (e2e)', () => {
+describe('Testes dos Módulos Tema (e2e)', () => {
   let token: any;
   let temaId: any;
   let usuarioId: any;
