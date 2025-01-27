@@ -51,7 +51,7 @@ export class PostagemService{
                 tema: true,
                 usuario: true
             }
-        }); // SELECT * FROM tb_postagens;
+        }); 
     }
 
 
